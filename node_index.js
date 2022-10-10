@@ -169,12 +169,12 @@ const reqFilter=(req,resp,next)=>{
     }
     
 }
-app.use(reqFilter)
+// app.use(reqFilter)
 
-app.get('/',(req,resp)=>{
+app.get('/',reqFilter,(req,resp)=>{
     resp.send('Welcome to Home page')
 })
-app.get('/users',(req,resp)=>{
+app.get('/users',reqFilter,(req,resp)=>{
     resp.send('Welcome to Users page')
 })
 
